@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@keyframes glowPulse {
+  0%, 100% {
+    filter: brightness(1.3)
+  }
+  50% {
+    filter: brightness(0.8)
+  }
+}
+.picture-glow {
+  animation: glowPulse 3.3s ease-in-out infinite
+}
