@@ -6,7 +6,10 @@ import router from './routes/userRoute.js'
 import bookRoute from './routes/bookRoute.js'
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin:"http://localhost:5173",
+    credentials:true,
+}))
 dotenv.config()
 app.use('/api/user',router)
 app.use('/api/book',bookRoute)
