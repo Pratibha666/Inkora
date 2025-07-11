@@ -15,7 +15,8 @@ const AddBook = () => {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:8080/api/book/add-book", {
+      const base_url = import.meta.env.VITE_SERVER_SIDE;
+      const response = await fetch(`${base_url}api/book/add-book`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

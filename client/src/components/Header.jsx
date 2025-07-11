@@ -16,7 +16,8 @@ const Header = () => {
       if (!user.isLoggedIn || !user.token) return;
 
       try {
-        const response = await fetch("http://localhost:8080/api/user/user-details", {
+        const base_url = import.meta.env.VITE_SERVER_SIDE;
+        const response = await fetch(`${base_url}api/user/user-details`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -40,7 +41,8 @@ const Header = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/user/logout", {
+      const base_url = import.meta.env.VITE_SERVER_SIDE;
+      const response = await fetch(`${base_url}api/user/logout`, {
         method: "GET",
       });
 

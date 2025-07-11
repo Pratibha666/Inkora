@@ -23,8 +23,8 @@ const Register = () => {
 
     try {
       setLoading(true); 
-
-      const response = await fetch("http://localhost:8080/api/user/register", {
+      const base_url = import.meta.env.VITE_SERVER_SIDE;
+      const response = await fetch(`${base_url}api/user/register`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

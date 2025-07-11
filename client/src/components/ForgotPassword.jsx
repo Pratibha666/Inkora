@@ -13,8 +13,9 @@ const ForgotPassword = () => {
 
     try {
       setLoading(true);
+      const base_url = import.meta.env.VITE_SERVER_SIDE;
       const response = await fetch(
-        "http://localhost:8080/api/user/forgot-password",
+        `${base_url}api/user/forgot-password`,
         {
           method: "PUT",
           headers: {

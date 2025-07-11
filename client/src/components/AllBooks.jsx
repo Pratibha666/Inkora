@@ -39,8 +39,9 @@ const AllBooks = () => {
 
   const handleDelete = async (bookId) => {
     try {
+      const base_url = import.meta.env.VITE_SERVER_SIDE;
       const response = await fetch(
-        `http://localhost:8080/api/book/delete-book/${bookId}`,
+        `${base_url}api/book/delete-book/${bookId}`,
         {
           method: "DELETE",
         }

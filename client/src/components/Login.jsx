@@ -19,8 +19,8 @@ const Login = () => {
 
     try {
       setLoading(true);
-
-      const response = await fetch("http://localhost:8080/api/user/login", {
+      const base_url = import.meta.env.VITE_SERVER_SIDE;
+      const response = await fetch(`${base_url}api/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

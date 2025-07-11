@@ -16,7 +16,8 @@ const ResetPassword = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:8080/api/user/reset-password", {
+      const base_url = import.meta.env.VITE_SERVER_SIDE;
+      const response = await fetch(`${base_url}api/user/reset-password`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -26,8 +26,9 @@ const UpdateBook = () => {
       if (author) updatedFields.author = author;
       if (image) updatedFields.image = image;
       if (price) updatedFields.price = price;
+      const base_url = import.meta.env.VITE_SERVER_SIDE;
       const response = await fetch(
-        `http://localhost:8080/api/book/update-book/${id}`,
+        `${base_url}api/book/update-book/${id}`,
         {
           method: "PUT",
           headers: {

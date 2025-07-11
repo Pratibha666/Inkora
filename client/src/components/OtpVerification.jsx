@@ -12,8 +12,9 @@ const OtpVerification = () => {
     e.preventDefault();
 
     try {
+      const base_url = import.meta.env.VITE_SERVER_SIDE;
       setLoading(true);
-      const response = await fetch("http://localhost:8080/api/user/verify-forgot-password", {
+      const response = await fetch(`${base_url}api/user/verify-forgot-password`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp }),
