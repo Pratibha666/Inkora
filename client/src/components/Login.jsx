@@ -20,7 +20,7 @@ const Login = () => {
     try {
       setLoading(true);
       const base_url = import.meta.env.VITE_SERVER_SIDE;
-      const response = await fetch(`${base_url}api/user/login`, {
+      const response = await fetch("https://inkora.vercel.app/api/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
