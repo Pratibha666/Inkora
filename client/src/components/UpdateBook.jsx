@@ -27,7 +27,7 @@ const UpdateBook = () => {
       if (image) updatedFields.image = image;
       if (price) updatedFields.price = price;
       const response = await fetch(
-        "https://inkora.vercel.app/api/book/update-book/${id}",
+        `https://inkora.vercel.app/api/book/update-book/${id}`,
         {
           method: "PUT",
           headers: {
