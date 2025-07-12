@@ -14,7 +14,7 @@ const AllBooks = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/book/get-book");
+        const response = await fetch("https://inkora.vercel.app/api/book/get-book");
         const data = await response.json();
         setBooks(data.books || []);
       } catch (error) {
