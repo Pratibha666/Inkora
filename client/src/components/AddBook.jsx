@@ -15,8 +15,7 @@ const AddBook = () => {
 
     try {
       setLoading(true);
-      const base_url = import.meta.env.VITE_SERVER_SIDE;
-      const response = await fetch(`${base_url}api/book/add-book`, {
+      const response = await fetch("https://inkora.vercel.app/api/book/add-book", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

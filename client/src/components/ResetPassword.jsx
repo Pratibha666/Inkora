@@ -16,8 +16,7 @@ const ResetPassword = () => {
 
     setLoading(true);
     try {
-      const base_url = import.meta.env.VITE_SERVER_SIDE;
-      const response = await fetch(`${base_url}api/user/reset-password`, {
+      const response = await fetch("https://inkora.vercel.app/api/user/reset-password", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

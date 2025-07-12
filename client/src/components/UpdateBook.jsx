@@ -26,9 +26,8 @@ const UpdateBook = () => {
       if (author) updatedFields.author = author;
       if (image) updatedFields.image = image;
       if (price) updatedFields.price = price;
-      const base_url = import.meta.env.VITE_SERVER_SIDE;
       const response = await fetch(
-        `${base_url}api/book/update-book/${id}`,
+        "https://inkora.vercel.app/api/book/update-book/${id}",
         {
           method: "PUT",
           headers: {

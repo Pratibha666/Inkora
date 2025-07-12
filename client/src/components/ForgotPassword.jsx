@@ -13,9 +13,8 @@ const ForgotPassword = () => {
 
     try {
       setLoading(true);
-      const base_url = import.meta.env.VITE_SERVER_SIDE;
       const response = await fetch(
-        `${base_url}api/user/forgot-password`,
+        "https://inkora.vercel.app/api/user/forgot-password",
         {
           method: "PUT",
           headers: {

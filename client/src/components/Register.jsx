@@ -23,8 +23,7 @@ const Register = () => {
 
     try {
       setLoading(true); 
-      const base_url = import.meta.env.VITE_SERVER_SIDE;
-      const response = await fetch(`${base_url}api/user/register`, {
+      const response = await fetch("https://inkora.vercel.app/api/user/register", {
         method: "POST",
         headers: {
           "content-type": "application/json",

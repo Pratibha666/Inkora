@@ -41,8 +41,7 @@ const Header = () => {
 
   const handleLogout = async () => {
     try {
-      const base_url = import.meta.env.VITE_SERVER_SIDE;
-      const response = await fetch(`${base_url}api/user/logout`, {
+      const response = await fetch("https://inkora.vercel.app/api/user/logout", {
         method: "GET",
       });
 

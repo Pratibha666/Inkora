@@ -39,9 +39,8 @@ const AllBooks = () => {
 
   const handleDelete = async (bookId) => {
     try {
-      const base_url = import.meta.env.VITE_SERVER_SIDE;
       const response = await fetch(
-        `${base_url}api/book/delete-book/${bookId}`,
+        `https://inkora.vercel.app/api/book/delete-book/${bookId}`,
         {
           method: "DELETE",
         }
