@@ -6,10 +6,22 @@ import router from './routes/userRoute.js'
 import bookRoute from './routes/bookRoute.js'
 const app = express()
 app.use(express.json())
+const allowedOrigins = [
+  "http://localhost:5173",         // Local dev
+  "https://inkora-w8vd.vercel.app" // Vercel frontend
+]
+
 app.use(cors({
-    origin:"http://localhost:5173",
-    credentials:true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
+  credentials: true,
 }))
+
 dotenv.config()
 app.use('/api/user',router)
 app.use('/api/book',bookRoute)
